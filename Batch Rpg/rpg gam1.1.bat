@@ -2,6 +2,7 @@
 title RPG Game
 setlocal enabledelayedexpansion
 
+
 :menu
 cls
 echo.
