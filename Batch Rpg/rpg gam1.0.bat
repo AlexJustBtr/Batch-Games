@@ -219,8 +219,6 @@ cls
 set gotquest=false
 set goblinsKilled=0
 set completedQuest="False"
-set /a xp+=23
-set /a money+=15
 echo.
 echo.
 echo "Well done, you managed to kill all four goblins, wow. Wait here let me get your reward."
@@ -234,6 +232,8 @@ echo.
 echo.
 echo.
 pause
+set /a playerxp+=23
+set /a money+=15
 goto home
 
 
