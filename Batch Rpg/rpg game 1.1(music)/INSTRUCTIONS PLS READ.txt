@@ -1,0 +1,16 @@
+This one has music still outdated though.
+if you want the music to work follow:
+
+1. download vlc here "https://get.videolan.org/vlc/3.0.20/win32/vlc-3.0.20-win32.exe"
+
+1.5. edit the rpg game1.1(music).bat with a text editor
+
+2. scroll to the bottom to where it says ":playmusic"
+
+3. where it says "C:\Desktop\rpg game\Soundtrack.mp3" put your on directory in
+
+4. only this part should change: "\Desktop\" if it doesnt its ok cause you saved it on your destop
+
+5. if you on a specific user it will look smth like this: "C:\Users\Alex\Desktop\rpg game\Soundtrack.mp3"
+
+6. if you changed it properly it will work fine, just run it
