@@ -88,10 +88,11 @@ echo    2) Village
 echo    3) Inventory
 echo    4) Level Up
 echo    5) Exit
+echo.  
 echo.
 echo.
 echo.
-echo.
+echo    6) Stats
 echo.
 echo.
 echo.
@@ -102,7 +103,34 @@ if "!c!" == "2" goto Village
 if "!c!" == "3" goto Inventory
 if "!c!" == "4" goto lvlup
 if "!c!" == "5" goto menu
+if "!c!" == "6" goto stats
 goto home
+
+::## Stats ######################################
+:stats
+cls 
+echo.
+echo.
+echo ==========================
+echo          LEVELUP
+echo ==========================
+echo.
+echo.
+echo    Goblins:  %goblinbodycount%
+echo    Elves:    %elfbodycount%
+echo    Spiders:  %spiderbodycount%
+echo    Scorpions:%scorpionbodycount%
+echo    Yeti:     %yetibodycount%
+echo.
+echo.
+echo    1) Back
+echo.
+echo.
+set /p c=Enter:
+
+if "!c!" == "1" goto home
+
+goto stats
 
 ::## LEVEL UP ########################################
 :lvlup
