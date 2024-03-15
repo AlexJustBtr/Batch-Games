@@ -112,7 +112,7 @@ cls
 echo.
 echo.
 echo ==========================
-echo          LEVELUP
+echo           STATS
 echo ==========================
 echo.
 echo.
