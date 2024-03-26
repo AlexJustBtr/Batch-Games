@@ -737,15 +737,15 @@ if "!c!" == "2" goto forestprecombat2
 
 
 :forestprecombat1
-set goblinhp=35
-set Goblindmg=4
+set goblinhp=20
+set Goblindmg=3
 if !Goblinbodycount! geq 1 if !Goblinbodycount! leq 5 ( 
-	set /a Goblinhp+=10
+	set /a Goblinhp+=5
 	set /a Goblindmg+=2
 	)
 if !Goblinbodycount! geq 6 ( 
-	set /a Goblinhp+=20
-	set /a Goblindmg+=4
+	set /a Goblinhp+=10
+	set /a Goblindmg+=2
 	)
 
 
