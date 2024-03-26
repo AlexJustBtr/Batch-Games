@@ -417,8 +417,8 @@ echo    2) Back
 echo.
 set /p c=Enter:
 
-if "!c!" == "y" goto healing
-if "!c!" == "n" goto village
+if "!c!" == "1" goto healing
+if "!c!" == "2" goto village
 
 :Healing
 if %hp% == %maxhp% (
@@ -590,8 +590,8 @@ echo.
 echo    1) Forest
 echo    2) Cave
 echo    3) Mountain
-if "!gotquest!" == "true" echo 4) Questing Forest (%goblinsKilled%)
-if "!gotquest2!" == "true" echo 5) Questing Cave (%spidersKilled%)
+if "!gotquest!" == "true" echo    4) Questing Forest (%goblinsKilled%)
+if "!gotquest2!" == "true" echo    5) Questing Cave (%spidersKilled%)
 echo.
 echo    b) Home
 echo.
@@ -781,7 +781,7 @@ set /a hp-=!Goblindmg!
 set /a Goblinhp-=!playerdmg!
 if !Goblinhp! leq 0 (
 	cls
-	set /a money+=4
+	set /a money+=6
 	set /a Goblinbodycount+=1
 	set /a playerxp+=5
 	goto Forestcontinue1
@@ -798,7 +798,7 @@ if %bombs% gtr 0 (
 )
 if !Goblinhp! leq 0 (
 	cls
-	set /a money+=4
+	set /a money+=6
 	set /a Goblinbodycount+=1
 	set /a playerxp+=5
 	goto Forestcontinue1
@@ -812,7 +812,7 @@ if %bombs2% gtr 0 (
 )
 if !Goblinhp! leq 0 (
 	cls
-	set /a money+=4
+	set /a money+=6
 	set /a Goblinbodycount+=1
 	set /a playerxp+=5
 	goto Forestcontinue1
@@ -826,7 +826,7 @@ if %bombs3% gtr 0 (
 )
 if !Goblinhp! leq 0 (
 	cls
-	set /a money+=4
+	set /a money+=6
 	set /a Goblinbodycount+=1
 	set /a playerxp+=5
 	goto Forestcontinue1
@@ -841,8 +841,10 @@ echo          VICTORY
 echo ==========================
 echo.
 echo    Wow you. you killed it? Ok
-echo    You found $4 and gained 5exp
-echo. 
+echo    You found $6 and gained 5exp
+echo.
+echo    ($%money%)   (%playerxp%/%xpneeded%XP)   (%hp%/%maxhp%HP)
+echo.
 pause
 goto Forestprecombat1
 
@@ -894,7 +896,7 @@ if !Elfhp! leq 0 (
 	cls
 	set /a money+=6
 	set /a Elfbodycount+=1
-	set /a playerxp+=7
+	set /a playerxp+=8
 	goto forestcontinue2
 	)
 if !hp! leq 0 (
@@ -911,7 +913,7 @@ if !Elfhp! leq 0 (
 	cls
 	set /a money+=6
 	set /a Elfbodycount+=1
-	set /a playerxp+=7
+	set /a playerxp+=8
 	goto Forestcontinue2
 	)
     goto Forestencounter2
@@ -925,7 +927,7 @@ if !Elfhp! leq 0 (
 	cls
 	set /a money+=6
 	set /a Elfbodycount+=1
-	set /a playerxp+=7
+	set /a playerxp+=8
 	goto Forestcontinue2
 	)
     goto Forestencounter2
@@ -939,7 +941,7 @@ if !Elfhp! leq 0 (
 	cls
 	set /a money+=6
 	set /a Elfbodycount+=1
-	set /a playerxp+=7
+	set /a playerxp+=8
 	goto Forestcontinue2
 	)
     goto Forestencounter2
@@ -952,8 +954,10 @@ echo          VICTORY
 echo ==========================
 echo.
 echo    Wow you. you killed it? Ok
-echo    You found $6 and gained 7exp
-echo. 
+echo    You found $6 and gained 8exp
+echo.
+echo    ($%money%)   (%playerxp%/%xpneeded%XP)   (%hp%/%maxhp%HP)
+echo.
 pause
 goto Forestprecombat2
 
@@ -1083,7 +1087,9 @@ echo ==========================
 echo.
 echo    Wow you. you killed it? Ok
 echo    You found $12 and gained 10exp
-echo. 
+echo.
+echo    ($%money%)   (%playerxp%/%xpneeded%XP)   (%hp%/%maxhp%HP)
+echo.
 pause
 goto Caveprecombat1
 
@@ -1194,7 +1200,9 @@ echo ==========================
 echo.
 echo    Wow you. you killed it? Ok
 echo    You found $15 and gained 15exp
-echo. 
+echo.
+echo    ($%money%)   (%playerxp%/%xpneeded%XP)   (%hp%/%maxhp%HP)
+echo.
 pause
 goto caveprecombat2
 
@@ -1326,7 +1334,9 @@ echo ==========================
 echo.
 echo    Wow you. you killed it? Ok
 echo    You found $30 and gained 30exp
-echo. 
+echo.
+echo    ($%money%)   (%playerxp%/%xpneeded%XP)   (%hp%/%maxhp%HP)
+echo.
 pause
 goto Mountainprecombat1
 
