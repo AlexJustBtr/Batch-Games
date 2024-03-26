@@ -76,7 +76,7 @@ echo           HOME
 echo ==========================
 echo.
 echo    Level:  %Level%    Exp:    %playerxp%/%xpneeded%
-echo    HP:     %hp%  Cash:   $%money%
+echo    HP:     %hp%/%maxhp%  Cash:   $%money%
 echo    Damage: %playerdmg%    Weapon: %current%, %Current2%
 echo.
 echo    Firebolts:%bombs%
@@ -141,7 +141,7 @@ echo ==========================
 echo          LEVELUP
 echo ==========================
 echo.
-echo	Hp:%maxhp%		Dmg:%playerdmg%
+echo	Hp:%hp%/%maxhp%		Dmg:%playerdmg%
 echo.
 echo	Level:%Level%	Exp:%playerxp%/%xpneeded%
 echo.
@@ -161,7 +161,7 @@ if "!c!" == "2" goto home
 if %playerxp% geq %xpneeded% (
     set /a Level+=1
     set /a maxhp+=3
-	set /a hp+=3
+	 set /a hp+=3
     set /a playerdmg+=2
     set /a playerxp-=%xpneeded%
     set /a xpneeded+=40
@@ -269,7 +269,7 @@ echo          VILLAGE
 echo ==========================
 echo.
 echo.    ------
-echo      $%money%	  	Hp:%hp% Firebolts:%bombs% Icebolts:%bombs2% Deathbeam:%bombs3%
+echo      $%money%	  	Hp:%hp%/%maxhp% Firebolts:%bombs% Icebolts:%bombs2% Deathbeam:%bombs3%
 echo.    ------
 echo.
 echo.
@@ -406,7 +406,7 @@ echo        HEALINGWITCH
 echo ==========================
 echo.
 echo.    ------
-echo      $%money%	  	Hp:%hp%
+echo      $%money%	  	Hp:%hp%/%maxhp%
 echo.    ------
 echo.
 echo    "Well hello there, im the village's local witchdoctor.. For a fee i can heal you, you know?
@@ -427,6 +427,7 @@ if %hp% == %maxhp% (
 else (	
 set /a money-=5
 set /a hp+=20
+ if %hp% gtr %maxhp% set hp=%maxhp%
 goto shophp
 )
 
